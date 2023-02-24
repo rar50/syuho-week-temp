@@ -145,6 +145,10 @@ app-top-bar h1 {
 .err {
   color: red;
 }
+.wrap {
+  text-align: center;
+  margin: 0;
+}
 
 /*
 Copyright Google LLC. All Rights Reserved.
