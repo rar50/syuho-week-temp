@@ -1,0 +1,49 @@
+<div>
+  <div>名前</div>
+  <input type="text" placeholder="名前" [(ngModel)]="inputName" />
+  <br />
+  <div>週開始日</div>
+  <input placeholder="週開始日/MMDD" type="text" [(ngModel)]="inputDay" />
+  <br />
+  <div>基本勤務時間</div>
+  <input
+    placeholder="勤務開始時間/○○:○○"
+    type="text"
+    [(ngModel)]="inputStartTime"
+  />
+  ～
+  <input
+    placeholder="勤務終了時間/○○:○○"
+    type="text"
+    [(ngModel)]="inputEndTime"
+  />
+  <br />
+  <button type="submit" id="button" name="ボタン" (click)="make()">作る</button>
+  <div *ngIf="errMess">
+    <div *ngFor="let mes of errMess">
+      <div class="err">{{ mes }}</div>
+    </div>
+  </div>
+  <div *ngIf="displayFlag">
+    <div>件名</div>
+    <div>
+      <div>週報_{{ inputName }}_{{ dates[0].date }}~{{ dates[6].date }}</div>
+    </div>
+    <div>
+      <div>本文</div>
+      <div *ngFor="let date of dates">
+        {{ date.date }} {{ date.day }} {{ date.time }}
+      </div>
+      <div>{{ tyuuiStr }}</div>
+      <div>{{ sagyouStr }}</div>
+      <div>{{ soukatuStr }}</div>
+      <div>{{ sonotaStr }}</div>
+    </div>
+  </div>
+</div>
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->
