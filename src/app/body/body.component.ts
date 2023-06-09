@@ -52,7 +52,7 @@ export class BodyComponent implements OnInit {
       const day = dayOfWeek[date.getDay()];
       const month = date.getMonth() + 1;
       const dayOfMonth = date.getDate();
-      const dateStr = `${month}月${dayOfMonth}日`;
+      const dateStr = `${month}/${dayOfMonth}`;
       // const dateStr = `${month}月${dayOfMonth}日（${day}）`;
       let timeStr = this.inputStartTime + '～' + this.inputEndTime;
       if (day.includes('日') || day.includes('土')) {
